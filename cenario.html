@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenário dos Precatórios - Apax Investimentos</title>
+    <meta name="description"
+        content="Entenda o cenário atual dos precatórios no Brasil e no Paraná. Dados sobre dívida nacional, estadual e tempo de espera.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- Empty favicon -->
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Apax Investimentos Logo"
+                    style="height: 80px;"></a>
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="cenario.html" class="nav-link active">Cenário dos Precatórios</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre nós</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li><a href="news.html" class="nav-link">Notícias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Title -->
+        <div class="page-header" style="margin-bottom: 2rem;">
+            <div class="section-container" style="padding-bottom: 0;">
+                <h1 class="page-title">Cenário dos Precatórios</h1>
+                <p style="color: var(--text-light); max-width: 600px; margin: 0 auto;">Análise atualizada sobre o volume
+                    de dívidas e prazos de pagamento no Brasil.</p>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <section class="section-container" style="margin-bottom: 2rem; padding-top: 1rem;">
+            <div class="stats-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+                <!-- National Debt -->
+                <div class="stat-card"
+                    style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-md); text-align: center;">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg"
+                        alt="Bandeira do Brasil" class="flag-icon">
+                    <h3 style="color: var(--text-light); margin-bottom: 0.5rem; font-weight: 600;">Dívida Nacional
+                        (Brasil)</h3>
+                    <p style="font-size: 2.5rem; font-weight: 700; color: var(--primary);">R$ 8,1 trilhões</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 1rem;">Volume total estimado da
+                        dívida pública.</p>
+                </div>
+
+                <!-- State Debt (PR) -->
+                <div class="stat-card"
+                    style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-md); text-align: center;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Bandeira_do_Paran%C3%A1.svg"
+                        alt="Bandeira do Paraná" class="flag-icon">
+                    <h3 style="color: var(--text-light); margin-bottom: 0.5rem; font-weight: 600;">Dívida Estadual
+                        (Paraná)</h3>
+                    <p style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">R$ 7,77 bilhões</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 1rem;">Estoque de precatórios
+                        devidos pelo estado.</p>
+                </div>
+
+                <!-- Wait Time -->
+                <div class="stat-card"
+                    style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-md); text-align: center;">
+                    <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">⏳</span>
+                    <h3 style="color: var(--text-light); margin-bottom: 0.5rem; font-weight: 600;">Tempo Médio de Espera
+                    </h3>
+                    <p style="font-size: 2.5rem; font-weight: 700; color: #e11d48;">15 a 20 anos</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 1rem;">Para pagamentos regulares
+                        sem antecipação.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Explanation Section -->
+        <section class="explanation-section"
+            style="max-width: 1000px; margin: 6rem auto; display: flex; align-items: center; gap: 4rem; padding: 0 2rem;">
+
+            <!-- Left: Content -->
+            <div class="explanation-text" style="flex: 1.5; text-align: left;">
+                <h2 style="margin-bottom: 2rem; color: var(--primary); font-size: 2rem; line-height: 1.2;">Por que o
+                    pagamento de<br>precatórios demora tanto?</h2>
+                <div style="color: var(--text-light); line-height: 1.8; font-size: 1.1rem;">
+                    <p style="margin-bottom: 1.5rem;">
+                        O pagamento de precatórios no Brasil é um processo complexo que depende diretamente do
+                        <strong>orçamento público disponível</strong>. Anualmente, a União, Estados e Municípios
+                        destinam uma verba limitada para quitar essas dívidas judiciais.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        Quando o valor total das condenações supera o orçamento reservado, cria-se uma <strong>fila de
+                            espera</strong>. O pagamento segue uma ordem cronológica e de prioridades (como idosos e
+                        portadores de doenças graves).
+                    </p>
+                    <p>
+                        Além disso, mudanças na legislação, como Emendas Constitucionais, podem limitar o teto de gastos
+                        anual, postergando o recebimento e aumentando o estoque da dívida.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Animated Hourglass -->
+            <div class="hourglass-container" style="flex: 1; display: flex; justify-content: center;">
+                <svg class="hourglass-svg" width="120" height="180" viewBox="0 0 100 140" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <!-- Glass Shape -->
+                    <path d="M20 5H80V15L55 55V85L80 125V135H20V125L45 85V55L20 15V5Z" stroke="#334155" stroke-width="4"
+                        stroke-linecap="round" stroke-linejoin="round" />
+
+                    <!-- Top Sand -->
+                    <rect class="sand-top" x="25" y="20" width="50" height="35" fill="var(--accent)"
+                        clip-path="url(#top-clip)" />
+                    <defs>
+                        <clipPath id="top-clip">
+                            <path d="M25 15L45 55H55L75 15H25Z" />
+                        </clipPath>
+                    </defs>
+
+                    <!-- Stream -->
+                    <rect class="sand-stream" x="48" y="55" width="4" height="70" fill="var(--accent)" />
+
+                    <!-- Bottom Sand -->
+                    <path class="sand-bottom" d="M45 85L25 125H75L55 85H45Z" fill="var(--accent)" />
+                </svg>
+            </div>
+
+        </section>
+
+        <!-- Advantages Section -->
+        <section class="section-container" style="max-width: 1200px; margin: 4rem auto 6rem; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary); font-size: 2rem;">Vantagens de
+                adiantar seu precatório</h2>
+
+            <div class="advantages-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+                <!-- Card 1: Liquidez Imediata -->
+                <div class="advantage-card"
+                    style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); text-align: center; transition: transform 0.3s ease;">
+                    <div class="adv-icon" style="color: var(--accent); margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--primary);">Liquidez Imediata</h3>
+                </div>
+
+                <!-- Card 2: Antecipação de Projetos -->
+                <div class="advantage-card"
+                    style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); text-align: center; transition: transform 0.3s ease;">
+                    <div class="adv-icon" style="color: var(--accent); margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 3v18h18" />
+                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--primary);">Antecipação de Projetos
+                        Pessoais</h3>
+                </div>
+
+                <!-- Card 3: Investimento Futuro -->
+                <div class="advantage-card"
+                    style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); text-align: center; transition: transform 0.3s ease;">
+                    <div class="adv-icon" style="color: var(--accent); margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="6" />
+                            <circle cx="12" cy="12" r="2" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--primary);">Investimento no que Importa
+                    </h3>
+                </div>
+
+                <!-- Card 4: Tranquilidade Financeira -->
+                <div class="advantage-card"
+                    style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); text-align: center; transition: transform 0.3s ease;">
+                    <div class="adv-icon" style="color: var(--accent); margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 18.5a9 9 0 1 0-10 0"></path>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--primary);">Tranquilidade Financeira
+                    </h3>
+                </div>
+
+                <!-- Card 5: Proteção Patrimônio (Shield) -->
+                <div class="advantage-card"
+                    style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); text-align: center; transition: transform 0.3s ease;">
+                    <div class="adv-icon" style="color: var(--accent); margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--primary);">Proteção do Patrimônio</h3>
+                </div>
+
+                <!-- Card 6: Inflação (Trending Down or Umbrella?) -->
+                <div class="advantage-card"
+                    style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); text-align: center; transition: transform 0.3s ease;">
+                    <div class="adv-icon" style="color: var(--accent); margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7" />
+                        </svg> <!-- Umbrella -->
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: var(--primary);">Segurança contra a Inflação
+                    </h3>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <!-- Logo Column -->
+                <div class="footer-col footer-col-logo">
+                    <img src="images/logo.png" alt="Apax Investimentos" class="footer-logo">
+                </div>
+
+                <!-- Company Info -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Razão
+                        Social</h3>
+                    <p class="footer-text">Apax Investimentos Ltda</p>
+                    <p class="footer-subtext">CNPJ 09.121.790/0001-38</p>
+                    <p class="footer-subtext mt-4">Apucarana - PR</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Entre em
+                        contato</h3>
+                    <ul class="footer-list">
+                        <li class="footer-list-item">
+                            <a href="https://wa.me/5543999164263" target="_blank" class="footer-link">
+                                (43) 99916-4263
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="mailto:atendimento@apaxinvestimentos.com.br" class="footer-link">
+                                atendimento@apaxinvestimentos.com.br
+                            </a>
+                        </li>
+                        <li class="footer-list-item mb-2">
+                            <a href="https://www.instagram.com/apax_investimentos/" target="_blank" class="footer-link">
+                                Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61558078990179" target="_blank"
+                                class="footer-link">
+                                Facebook
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Apax Investimentos. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+        <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
