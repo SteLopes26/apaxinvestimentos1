@@ -395,10 +395,16 @@ main {
     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .cta-wrapper {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .benefits-col,
+    .form-col {
+        border-radius: 0 !important;
+        /* Make them square as requested */
     }
 }
 
