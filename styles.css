@@ -1401,3 +1401,137 @@ main {
 .map-section-contact {
     margin-top: 0;
 }
+/* Article Pages Styling */
+.article-container {
+    max-width: 1000px; /* Increased from 800px */
+    width: 90%;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 4rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.article-main-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-md);
+}
+
+.article-body {
+    font-size: 1.15rem; /* Slightly larger for better reading */
+    line-height: 1.9;
+    color: var(--text-main);
+}
+
+.article-body p {
+    margin-bottom: 1.5rem;
+}
+
+.article-heading {
+    color: var(--primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.article-subheading {
+    color: var(--primary-light);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.article-list {
+    list-style: disc;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.article-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 0.5rem;
+}
+
+.article-highlight-box {
+    background-color: #f8fafc;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2.5rem 0;
+    border-left: 5px solid var(--accent);
+}
+
+.highlight-title {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.article-cta-container {
+    margin-top: 4rem;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 3rem;
+}
+
+.btn-article-cta {
+    display: inline-block;
+    width: auto;
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.article-tag-highlight {
+    background: rgba(255,146,0,0.15); /* Light orange background */
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.article-subtitle {
+    color: var(--text-light);
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific Article Responsive Adjustments */
+@media (max-width: 768px) {
+    .article-container {
+        padding: 2rem 1.5rem;
+        width: 95%;
+    }
+
+    .article-main-image {
+        height: 250px;
+        margin-bottom: 2rem;
+    }
+
+    .article-heading {
+        font-size: 1.5rem;
+    }
+
+    .page-title {
+        font-size: 2rem; /* Ensure title scales down */
+    }
+
+    .article-body {
+        font-size: 1.05rem;
+    }
+}
+
