@@ -1404,14 +1404,17 @@ main {
 
 /* Article Pages Styling */
 .article-container {
-    max-width: 1000px;
-    /* Increased from 800px */
-    width: 90%;
+    max-width: 1200px;
+    /* Aligned with Main Grid */
+    width: 100%;
     margin: 0 auto;
     background: var(--white);
-    padding: 4rem;
+    padding: 3rem 2rem;
+    /* Reduced horizontal padding to match grid */
     border-radius: 16px;
     box-shadow: var(--shadow-sm);
+    box-sizing: border-box;
+    /* Ensure padding doesn't overflow width */
 }
 
 .article-main-image {
@@ -1461,6 +1464,7 @@ main {
 .article-list li {
     margin-bottom: 0.8rem;
     padding-left: 0.5rem;
+    text-align: justify;
 }
 
 .article-highlight-box {
