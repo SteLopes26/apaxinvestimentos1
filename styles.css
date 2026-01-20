@@ -114,12 +114,6 @@ main {
     padding: 4rem 2rem;
 }
 
-@media (max-width: 768px) {
-    .section-container {
-        padding: 2rem 1.5rem;
-    }
-}
-
 /* Page Header */
 .page-header {
     text-align: center;
@@ -468,30 +462,8 @@ main {
         left: 0;
         right: 0;
         background: var(--white);
-        padding: 0;
-        box-shadow: var(--shadow-lg);
-        border-bottom: 2px solid var(--accent);
-    }
-
-    .nav-menu.active li {
-        width: 100%;
-        border-bottom: 1px solid #f1f5f9;
-    }
-
-    .nav-menu.active li:last-child {
-        border-bottom: none;
-    }
-
-    .nav-menu.active .nav-link {
-        display: block;
-        padding: 1rem 1.5rem;
-        font-size: 1.1rem;
-        width: 100%;
-    }
-
-    .nav-menu.active .nav-link:hover {
-        background-color: #f8fafc;
-        color: var(--accent);
+        padding: 1rem;
+        box-shadow: var(--shadow-md);
     }
 }
 
@@ -585,9 +557,9 @@ main {
         transform: none !important;
         width: 100% !important;
         max-width: 100% !important;
-        background: rgba(2, 33, 61, 0.95);
-        /* Darker background for readability */
-        padding: 1.5rem;
+        background: rgba(2, 33, 61, 0.85);
+        /* Dark background for readability */
+        padding: 2rem;
         text-align: center !important;
         order: 1;
         /* Text top */
@@ -600,19 +572,6 @@ main {
 
 /* Ensures it covers if we ever set height, but auto height keeps aspect ratio */
 
-
-/* Tablet and Mobile - Remove Background Image */
-@media (max-width: 1024px) {
-    .hero-image {
-        display: none !important;
-    }
-
-    .hero-wrapper {
-        background-color: var(--primary);
-        /* Deep Blue */
-        min-height: auto;
-    }
-}
 
 /* Steps Section */
 .steps-section {
@@ -1578,23 +1537,5 @@ main {
 
     .article-body {
         font-size: 1.05rem;
-    }
-}
-
-/* Tablet and Mobile - Remove Background Image (MOVED TO END FOR SPECIFICITY) */
-@media (max-width: 1024px) {
-
-    .hero-image,
-    .hero-people-overlay,
-    .desktop-only {
-        display: none !important;
-    }
-
-    .hero-wrapper {
-        background-color: var(--primary) !important;
-        background-image: none !important;
-        min-height: auto;
-        padding-top: 2rem;
-        /* Give some space since images are gone */
     }
 }
