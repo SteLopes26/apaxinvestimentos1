@@ -1585,7 +1585,8 @@ main {
 @media (max-width: 1024px) {
 
     .hero-image,
-    .hero-people-overlay {
+    .hero-people-overlay,
+    .desktop-only {
         display: none !important;
     }
 
