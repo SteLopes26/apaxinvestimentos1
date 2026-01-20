@@ -34,7 +34,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 a {
@@ -113,6 +112,12 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .section-container {
+        padding: 2rem 1.5rem;
+    }
 }
 
 /* Page Header */
@@ -463,8 +468,30 @@ main {
         left: 0;
         right: 0;
         background: var(--white);
-        padding: 1rem;
-        box-shadow: var(--shadow-md);
+        padding: 0;
+        box-shadow: var(--shadow-lg);
+        border-bottom: 2px solid var(--accent);
+    }
+
+    .nav-menu.active li {
+        width: 100%;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .nav-menu.active li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu.active .nav-link {
+        display: block;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    .nav-menu.active .nav-link:hover {
+        background-color: #f8fafc;
+        color: var(--accent);
     }
 }
 
@@ -494,93 +521,98 @@ main {
     transform: scale(1.05);
 }
 
-/* Unified Mobile/Tablet Hero Response (Up to 1024px) */
-@media (max-width: 1024px) {
+/* Mobile Responsiveness for Hero Overlay */
+@media (max-width: 900px) {
+    .hero-overlay-text {
+        right: 5% !important;
+        max-width: 50% !important;
+    }
 
+    .hero-overlay-text h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .stat-line {
+        font-size: 0.9rem !important;
+    }
+
+    .hero-people-overlay {
+        height: 70% !important;
+        left: 0 !important;
+        max-width: 50% !important;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* Revert to standard overlay layout */
     .hero-wrapper {
-        /* Remove Image, Use Brand Color */
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* Center everything */
-        position: relative;
-        overflow: hidden;
-        min-height: auto;
-        /* Let content dictate height */
-        padding-top: 2rem;
-        padding-bottom: 0;
+        display: block;
+        /* Default */
     }
 
     .hero-image {
-        display: none !important;
-        /* HIDE BACKGROUND IMAGE */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
     }
 
-    /* Text: Simply stacked on top */
+    .hero-wrapper {
+        position: relative;
+        min-height: 500px;
+        overflow: hidden;
+    }
+
+    .hero-people-overlay {
+        position: relative !important;
+        height: auto !important;
+        width: 100% !important;
+        max-width: 80% !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+        bottom: 0 !important;
+        margin-top: auto;
+        display: block;
+        order: 2;
+    }
+
     .hero-overlay-text {
         position: relative !important;
         top: auto !important;
         right: auto !important;
-        width: 90% !important;
-        max-width: 600px !important;
-        padding: 0 0 2rem 0 !important;
-        text-align: center !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 2;
         transform: none !important;
-    }
-
-    .hero-overlay-text h2 {
-        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
-        margin-bottom: 1rem !important;
-        text-shadow: none !important;
-        /* No need for shadow on solid bg */
+        width: 100% !important;
+        max-width: 100% !important;
+        background: rgba(2, 33, 61, 0.95);
+        /* Darker background for readability */
+        padding: 1.5rem;
+        text-align: center !important;
+        order: 1;
+        /* Text top */
     }
 
     .hero-stats {
         align-items: center !important;
     }
-
-    /* People: Simply stacked at bottom */
-    .hero-people-overlay {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        width: 85% !important;
-        /* Nice and big */
-        max-width: 450px !important;
-        height: auto !important;
-        margin-top: 0 !important;
-        display: block !important;
-        z-index: 1;
-        object-fit: contain;
-        transform: none !important;
-    }
 }
-
-/* Tweaks for small screens */
-@media (max-width: 600px) {
-    .hero-overlay-text {
-        width: 100% !important;
-        padding: 0 1rem 2rem 1rem !important;
-    }
-
-    .hero-overlay-text h2 {
-        font-size: 1.7rem !important;
-    }
-
-    .hero-people-overlay {
-        width: 90% !important;
-    }
-}
-
-
 
 /* Ensures it covers if we ever set height, but auto height keeps aspect ratio */
 
+
+/* Tablet and Mobile - Remove Background Image */
+@media (max-width: 1024px) {
+    .hero-image {
+        display: none !important;
+    }
+
+    .hero-wrapper {
+        background-color: var(--primary);
+        /* Deep Blue */
+        min-height: auto;
+    }
+}
 
 /* Steps Section */
 .steps-section {
@@ -683,104 +715,56 @@ main {
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .page-title {
-        font-size: 1.75rem;
-        /* Reduced from 2rem */
-        margin-bottom: 2rem;
-    }
-
-    /* Tighter Hero Padding */
     .hero-section {
-        padding: 0;
-        margin-bottom: 1rem;
+        padding: 2rem 1rem;
     }
 
-    /* Compact CTA Section */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-badges {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
     .cta-section {
-        padding: 1rem;
-        /* Reduced from 2rem */
-        margin-bottom: 2rem;
+        padding: 2rem;
     }
 
     .benefits-col,
     .form-col {
         width: 100%;
-        margin-bottom: 1rem;
-        /* Reduced margin */
-        padding: 1.5rem;
-        /* Reduced internal padding */
+        margin-bottom: 1.5rem;
     }
 
     .social-buttons a {
-        font-size: 0.95rem;
-        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
     }
 
-    /* Grids */
     .steps-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        /* Reduced gap */
+        gap: 1.5rem;
     }
 
     .step-card {
-        padding: 1.5rem;
-        /* Reduced padding */
+        padding: 1rem;
     }
 
     .step-number {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
-        margin-bottom: 1rem;
     }
 
-    .steps-title,
-    .video-title,
-    .faq-title,
-    .articles-title,
-    .map-title {
-        font-size: 1.75rem !important;
-        /* Force smaller titles */
-        margin-bottom: 1.5rem;
-    }
-
-    /* Compact Boxed Sections */
     .faq-section,
     .steps-section,
     .video-section,
     .articles-section,
     .map-section {
-        padding: 1.5rem;
-        /* Reduced */
-        margin: 1rem auto;
-        width: 95%;
-        /* Use more screen width */
-    }
-
-    /* Footer adjustments */
-    .footer-grid {
-        gap: 2rem;
-        grid-template-columns: 1fr;
-        /* Stack vertically for cleanliness */
-    }
-
-    .footer-col {
-        text-align: center;
-        /* Center align footer on mobile */
-        align-items: center;
-    }
-
-    .footer-col-logo {
-        align-items: center;
+        padding: 1rem;
+        margin: 1rem 1.5rem;
     }
 }
 
