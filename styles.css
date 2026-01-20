@@ -495,24 +495,25 @@ main {
 
 /* Mobile Responsiveness for Hero Overlay */
 /* Tablet and Mobile Hero Implementation */
+/* Tablet and Mobile Hero Implementation */
 @media (max-width: 1024px) {
     .hero-section {
         height: auto;
-        min-height: 100vh;
-        /* Ensure full screen feel if needed */
+        min-height: auto;
+        /* Removed 100vh to reduce height */
         background-color: var(--primary);
-        /* Fallback */
+        padding-bottom: 0;
     }
 
     .hero-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 600px;
-        /* Give enough room */
+        min-height: 480px;
+        /* Reduced from 600px to ~half (considering content) */
         position: relative;
-        padding-top: 4rem;
-        /* Space for navbar */
+        padding-top: 2rem;
+        /* Reduced padding */
     }
 
     .hero-image {
@@ -524,7 +525,6 @@ main {
         object-fit: cover;
         z-index: 0;
         opacity: 0.3;
-        /* Dim background for readability if text has no bg */
     }
 
     .hero-overlay-text {
@@ -536,20 +536,20 @@ main {
         width: 100% !important;
         max-width: 100% !important;
         text-align: center !important;
-        padding: 2rem;
+        padding: 1.5rem;
         background: transparent !important;
-        /* Cleaner look as requested "no espaço em branco" */
         z-index: 2;
     }
 
     .hero-overlay-text h2 {
-        font-size: 2rem !important;
-        margin-bottom: 2rem;
+        font-size: 1.8rem !important;
+        /* Slightly smaller to fit */
+        margin-bottom: 1rem;
     }
 
     .hero-stats {
         align-items: center !important;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .hero-people-overlay {
@@ -557,14 +557,17 @@ main {
         order: 2;
         display: block !important;
         width: 100% !important;
-        max-width: 600px !important;
+        max-width: 400px !important;
+        /* Limit width to keep height proportional */
         height: auto !important;
+        max-height: 300px;
+        /* Limit height explicitly */
         margin: auto auto 0 auto !important;
-        /* Push to bottom, center horizontally */
         left: auto !important;
         bottom: 0 !important;
         z-index: 2;
         object-fit: contain;
+        object-position: bottom center;
     }
 }
 
