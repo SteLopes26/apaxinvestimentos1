@@ -1580,3 +1580,16 @@ main {
         font-size: 1.05rem;
     }
 }
+
+/* Tablet and Mobile - Remove Background Image (MOVED TO END FOR SPECIFICITY) */
+@media (max-width: 1024px) {
+    .hero-image {
+        display: none !important;
+    }
+
+    .hero-wrapper {
+        background-color: var(--primary) !important;
+        background-image: none !important;
+        min-height: auto;
+    }
+}
