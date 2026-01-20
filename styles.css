@@ -34,6 +34,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 a {
@@ -493,63 +494,54 @@ main {
     transform: scale(1.05);
 }
 
-/* Mobile Responsiveness for Hero Overlay */
-@media (max-width: 900px) {
-    .hero-overlay-text {
-        right: 5% !important;
-        max-width: 50% !important;
-    }
+/* Unified Mobile/Tablet Hero Response (Up to 1024px) */
+/* Unified Mobile/Tablet Hero Response (Up to 1024px) */
+@media (max-width: 1024px) {
 
-    .hero-overlay-text h2 {
-        font-size: 1.5rem !important;
-    }
-
-    .stat-line {
-        font-size: 0.9rem !important;
-    }
-
-    .hero-people-overlay {
-        height: 70% !important;
-        left: 0 !important;
-        max-width: 50% !important;
-    }
-}
-
-@media (max-width: 600px) {
-
-    /* Revert to standard overlay layout */
+    /* Flexbox Container for Safety */
     .hero-wrapper {
-        display: block;
-        /* Default */
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        min-height: 60vh;
+        /* Minimum height, but can grow */
+        height: auto;
+        /* Allow growth if text needs it */
+        justify-content: flex-start;
+        /* Start text from top */
+        padding-bottom: 300px;
+        /* RESERVE SPACE for the People image at bottom */
     }
 
     .hero-image {
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
         z-index: -1;
     }
 
-    .hero-wrapper {
-        position: relative;
-        min-height: 500px;
-        overflow: hidden;
-    }
-
+    /* People: Anchored Bottom Left - Absolute but in reserved space */
     .hero-people-overlay {
-        position: relative !important;
-        height: auto !important;
-        width: 100% !important;
-        max-width: 80% !important;
-        left: 50% !important;
-        transform: translateX(-50%);
+        position: absolute !important;
         bottom: 0 !important;
-        margin-top: auto;
-        display: block;
-        order: 2;
+        left: -10% !important;
+        height: auto !important;
+        width: 70% !important;
+        max-width: 400px !important;
+        transform: none !important;
+        margin: 0 !important;
+        display: block !important;
+        z-index: 1;
+        object-fit: contain;
+        object-position: bottom left;
     }
 
+    /* Text: Relative Flow - Never overlaps because it pushes container */
     .hero-overlay-text {
         position: relative !important;
         top: auto !important;
@@ -557,18 +549,52 @@ main {
         transform: none !important;
         width: 100% !important;
         max-width: 100% !important;
-        background: rgba(2, 33, 61, 0.85);
-        /* Dark background for readability */
-        padding: 2rem;
-        text-align: center !important;
-        order: 1;
-        /* Text top */
+        background: transparent !important;
+        padding: 2rem 5% 0 0 !important;
+        /* Top padding + Right alignment */
+        text-align: right !important;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .hero-overlay-text h2 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+        /* Fluid Layout */
+        line-height: 1.1;
+        margin-bottom: 1rem !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
 
     .hero-stats {
-        align-items: center !important;
+        align-items: flex-end !important;
     }
 }
+
+/* Tweaks for small screens */
+@media (max-width: 600px) {
+    .hero-wrapper {
+        min-height: 550px;
+        padding-bottom: 250px;
+        /* Adjust reserved space */
+    }
+
+    .hero-people-overlay {
+        width: 80% !important;
+        left: -15% !important;
+    }
+
+    .hero-overlay-text {
+        padding-top: 3rem !important;
+    }
+
+    .hero-overlay-text h2 {
+        font-size: 1.8rem !important;
+    }
+}
+
+
 
 /* Ensures it covers if we ever set height, but auto height keeps aspect ratio */
 
@@ -674,56 +700,104 @@ main {
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+        /* Reduced from 2rem */
+        margin-bottom: 2rem;
+    }
+
+    /* Tighter Hero Padding */
     .hero-section {
-        padding: 2rem 1rem;
+        padding: 0;
+        margin-bottom: 1rem;
     }
 
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-badges {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
+    /* Compact CTA Section */
     .cta-section {
-        padding: 2rem;
+        padding: 1rem;
+        /* Reduced from 2rem */
+        margin-bottom: 2rem;
     }
 
     .benefits-col,
     .form-col {
         width: 100%;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
+        /* Reduced margin */
+        padding: 1.5rem;
+        /* Reduced internal padding */
     }
 
     .social-buttons a {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+        padding: 0.75rem 1rem;
     }
 
+    /* Grids */
     .steps-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
+        /* Reduced gap */
     }
 
     .step-card {
-        padding: 1rem;
+        padding: 1.5rem;
+        /* Reduced padding */
     }
 
     .step-number {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
 
+    .steps-title,
+    .video-title,
+    .faq-title,
+    .articles-title,
+    .map-title {
+        font-size: 1.75rem !important;
+        /* Force smaller titles */
+        margin-bottom: 1.5rem;
+    }
+
+    /* Compact Boxed Sections */
     .faq-section,
     .steps-section,
     .video-section,
     .articles-section,
     .map-section {
-        padding: 1rem;
-        margin: 1rem 1.5rem;
+        padding: 1.5rem;
+        /* Reduced */
+        margin: 1rem auto;
+        width: 95%;
+        /* Use more screen width */
+    }
+
+    /* Footer adjustments */
+    .footer-grid {
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        /* Stack vertically for cleanliness */
+    }
+
+    .footer-col {
+        text-align: center;
+        /* Center align footer on mobile */
+        align-items: center;
+    }
+
+    .footer-col-logo {
+        align-items: center;
     }
 }
 
