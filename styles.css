@@ -63,7 +63,7 @@ img {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0.2rem 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1404,17 +1404,14 @@ main {
 
 /* Article Pages Styling */
 .article-container {
-    max-width: 1200px;
-    /* Aligned with Main Grid */
-    width: 100%;
+    max-width: 1000px;
+    /* Increased from 800px */
+    width: 90%;
     margin: 0 auto;
     background: var(--white);
-    padding: 3rem 2rem;
-    /* Reduced horizontal padding to match grid */
+    padding: 4rem;
     border-radius: 16px;
     box-shadow: var(--shadow-sm);
-    box-sizing: border-box;
-    /* Ensure padding doesn't overflow width */
 }
 
 .article-main-image {
@@ -1431,12 +1428,10 @@ main {
     /* Slightly larger for better reading */
     line-height: 1.9;
     color: var(--text-main);
-    text-align: justify;
 }
 
 .article-body p {
     margin-bottom: 1.5rem;
-    text-align: justify;
 }
 
 .article-heading {
@@ -1464,7 +1459,6 @@ main {
 .article-list li {
     margin-bottom: 0.8rem;
     padding-left: 0.5rem;
-    text-align: justify;
 }
 
 .article-highlight-box {
@@ -1486,8 +1480,7 @@ main {
     margin-top: 4rem;
     text-align: center;
     border-top: 1px solid #e2e8f0;
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+    padding-top: 3rem;
 }
 
 .btn-article-cta {
