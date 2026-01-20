@@ -1583,7 +1583,9 @@ main {
 
 /* Tablet and Mobile - Remove Background Image (MOVED TO END FOR SPECIFICITY) */
 @media (max-width: 1024px) {
-    .hero-image {
+
+    .hero-image,
+    .hero-people-overlay {
         display: none !important;
     }
 
@@ -1591,5 +1593,7 @@ main {
         background-color: var(--primary) !important;
         background-image: none !important;
         min-height: auto;
+        padding-top: 2rem;
+        /* Give some space since images are gone */
     }
 }
