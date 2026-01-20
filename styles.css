@@ -472,16 +472,30 @@ main {
         max-width: 100% !important;
         height: auto !important;
         /* "Same proportion" logic: remove distinct max-height, let it flow naturally but not huge */
-        max-height: 40vh;
+        max-height: 55vh;
         margin: 0 auto !important;
         left: auto !important;
         bottom: 0 !important;
         z-index: 2;
         object-fit: contain;
         object-position: bottom center;
-        /* Ensure it sits flush at bottom */
         display: block;
         vertical-align: bottom;
+    }
+
+    /* Compact Steps Cards for Mobile */
+    .step-card {
+        padding: 1.5rem !important;
+        /* Reduce padding from desktop's 2.5rem */
+    }
+
+    .steps-section {
+        padding: 2rem 1rem 4rem !important;
+        /* Reduce section padding */
+    }
+
+    .step-title {
+        font-size: 1.3rem !important;
     }
 
 
