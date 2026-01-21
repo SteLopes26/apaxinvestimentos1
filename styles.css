@@ -144,14 +144,13 @@ main {
 }
 
 .page-title {
-    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-    /* Slightly reduced for better wrapping */
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    /* Refined for 2-line wrapping */
     font-weight: 700;
     color: var(--primary);
     line-height: 1.2;
     margin-bottom: 1rem;
-    max-width: 850px;
-    /* Force wrap to 2 lines on large screens */
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -806,11 +805,13 @@ main {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 4rem;
-    /* Lift text slightly */
+    max-width: 650px;
+    /* Force better hero title wrapping */
 }
 
 .new-hero-content h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    /* Slightly smaller to fit in 2-3 lines */
     font-weight: 800;
     line-height: 1.1;
     text-transform: uppercase;
@@ -857,18 +858,22 @@ main {
     }
 
     .new-hero-content h1 {
-        font-size: clamp(0.9rem, 4vw, 1.4rem);
-        margin-bottom: 1rem;
+        font-size: clamp(0.7rem, 3.5vw, 1.25rem);
+        /* Smaller to avoid 4-line wrap */
+        margin-bottom: 0.8rem;
     }
 
     .stat-item {
-        font-size: 0.65rem;
-        padding-left: 0.5rem;
-        border-left-width: 3px;
+        font-size: 0.6rem;
+        padding-left: 0.4rem;
+        border-left-width: 2px;
     }
 
     .new-hero-image img {
-        max-height: 300px;
+        max-height: 280px;
+        margin-bottom: -2px;
+        /* Pull down further to kill any blue line */
+        display: block;
     }
 }
 
@@ -1532,13 +1537,13 @@ main {
 }
 
 .steps-title {
-    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-size: clamp(1.6rem, 3.8vw, 2.22rem);
+    /* Refined for 2-line wrapping */
     font-weight: 700;
     color: var(--primary);
     text-align: center;
     margin-bottom: 3rem;
-    max-width: 700px;
-    /* Adjusted to force 2 lines for "Caminho para o Recebimento do Precatório" */
+    max-width: 860px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.2;
