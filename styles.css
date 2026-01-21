@@ -144,12 +144,16 @@ main {
 }
 
 .page-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    /* Fluid scaling */
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    /* Slightly reduced for better wrapping */
     font-weight: 700;
     color: var(--primary);
     line-height: 1.2;
     margin-bottom: 1rem;
+    max-width: 850px;
+    /* Force wrap to 2 lines on large screens */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .page-title::after {
@@ -1525,6 +1529,19 @@ main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
+}
+
+.steps-title {
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    /* Adjusted to force 2 lines for "Caminho para o Recebimento do Precatório" */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.2;
 }
 
 .footer-col-logo {
