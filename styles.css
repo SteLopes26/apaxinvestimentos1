@@ -1098,29 +1098,28 @@ main {
         max-width: none !important;
         height: auto !important;
         object-fit: contain;
-        margin: 0 0 -20px 0 !important;
-        /* Force down to ensuring touching edge */
-        bottom: -5px !important;
-        /* Nudge down further */
+        margin: 0 0 -10px 0 !important;
+        /* Slight negative margin */
+        bottom: 0 !important;
         left: auto !important;
         right: 0 !important;
-        transform: none !important;
+        transform: translateY(10px) !important;
+        /* Push DOWN visual pixels to cover gap */
         z-index: 10;
-        /* Ensure prominent */
         display: block !important;
     }
 
     .hero-overlay-text {
         position: relative !important;
         width: 40% !important;
-        /* Smaller text area */
         text-align: left !important;
         top: auto !important;
         right: auto !important;
         transform: none !important;
-        margin-bottom: 2rem;
-        padding: 0 0.5rem 0 1rem;
-        /* Left padding for visual balance */
+        margin-bottom: 0 !important;
+        /* REMOVE spacing that pushes container up */
+        padding: 0 0.5rem 2rem 1rem;
+        /* Add padding inside instead for spacing */
         z-index: 10;
         display: flex;
         flex-direction: column;
