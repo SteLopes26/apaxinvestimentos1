@@ -806,8 +806,8 @@ main {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 4rem;
-    max-width: 650px;
-    /* Force better hero title wrapping */
+    max-width: 800px;
+    /* Widened for 2-3 line title balance */
 }
 
 .new-hero-content h1 {
