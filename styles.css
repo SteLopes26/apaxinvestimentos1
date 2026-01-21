@@ -537,18 +537,30 @@ main {
         margin-bottom: 1.2rem;
     }
 
-    /* Social Buttons - Side by Side */
+    /* Social Buttons - Stack on small screens for better sizing */
     .social-buttons {
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
+        /* Default to stack for guaranteed safety */
         gap: 0.75rem;
     }
 
+    /* Only side-by-side if enough space (e.g. tablet) */
+    @media (min-width: 640px) {
+        .social-buttons {
+            flex-direction: row;
+        }
+    }
+
     .btn-social {
-        flex: 1;
+        width: 100%;
+        /* Full width when stacked */
         padding: 0.75rem;
-        font-size: 0.85rem;
-        white-space: nowrap;
+        font-size: 0.9rem;
         justify-content: center;
+        /* Allow text wrap if needed, or keep nowrap if ensuring width */
+        white-space: normal;
+        text-align: center;
     }
 
     /* Form Compact */
@@ -569,16 +581,15 @@ main {
 
     .form-grid {
         display: flex;
-        /* Flex to keep side-by-side on mobile if space allows */
+        flex-direction: column;
+        /* Always stack inputs on mobile */
         gap: 0.75rem;
     }
 
-    /* Force stack on very small screens only */
-    @media (max-width: 360px) {
-        .form-grid {
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+    /* Remove the weird 360px query */
+    .form-group {
+        width: 100%;
+        margin-bottom: 0 !important;
     }
 
     .form-group {
