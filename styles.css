@@ -150,7 +150,8 @@ main {
     color: var(--primary);
     line-height: 1.2;
     margin-bottom: 1rem;
-    max-width: 600px;
+    max-width: 450px;
+    /* Forced narrower to strictly wrap in 2 lines on desktop */
     margin-left: auto;
     margin-right: auto;
 }
@@ -1537,13 +1538,15 @@ main {
 }
 
 .steps-title {
-    font-size: clamp(1.6rem, 3.8vw, 2.22rem);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    /* Even smaller to fit in 2 lines */
     /* Refined for 2-line wrapping */
     font-weight: 700;
     color: var(--primary);
     text-align: center;
     margin-bottom: 3rem;
-    max-width: 860px;
+    max-width: 950px;
+    /* Wider to ensure 2 lines */
     margin-left: auto;
     margin-right: auto;
     line-height: 1.2;
