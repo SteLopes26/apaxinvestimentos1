@@ -1073,12 +1073,19 @@ main {
     }
 
     /* Hero Section */
+    /* Hero Section - Optimized for Mobile */
     .hero-wrapper {
-        padding-top: 4rem;
-        padding-bottom: 25rem;
-        /* Space for image */
-        background-position: center bottom;
-        /* Anchor bg better */
+        padding-top: 3rem;
+        /* Reduce top padding */
+        padding-bottom: 0;
+        /* Remove massive bottom padding */
+        min-height: auto;
+        /* Let content define height */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        /* Clip overflow */
     }
 
     .hero-overlay-text {
@@ -1088,21 +1095,45 @@ main {
         right: auto !important;
         width: 100% !important;
         text-align: center !important;
-        margin-bottom: 2rem;
-        padding: 0 1rem;
+        margin-bottom: 1rem;
+        padding: 0 1.5rem;
+        z-index: 10;
+        /* Ensure text is above image */
     }
 
     .hero-overlay-text h2 {
-        font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+        font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
         line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+
+    /* Stats on mobile - compact */
+    .hero-stats {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .stat-line {
+        font-size: 0.95rem;
     }
 
     .hero-people-overlay {
-        max-width: 85% !important;
-        max-height: 50vh !important;
+        position: relative !important;
+        /* Flow naturally */
+        max-width: 100% !important;
+        /* Full width */
         width: auto !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+        height: auto !important;
+        max-height: 50vh;
+        /* Limit height so it fits */
+        object-fit: contain;
+        margin-top: auto;
+        /* Push to bottom if space allows */
+        transform: none !important;
+        left: auto !important;
+        display: block !important;
+        margin-bottom: -1px;
+        /* Avoid sub-pixel gaps */
     }
 
     /* CTA Section - Fixed "Tables out of square" */
