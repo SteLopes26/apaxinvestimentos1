@@ -39,6 +39,25 @@ body {
     min-height: 100vh;
 }
 
+/* Explicit Mobile/Desktop Toggles */
+.mobile-view-only {
+    display: none !important;
+}
+
+.desktop-view-only {
+    display: block !important;
+}
+
+@media (max-width: 768px) {
+    .mobile-view-only {
+        display: block !important;
+    }
+
+    .desktop-view-only {
+        display: none !important;
+    }
+}
+
 a {
     text-decoration: none;
     color: inherit;
