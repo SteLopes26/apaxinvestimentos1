@@ -1075,71 +1075,72 @@ main {
     /* Hero Section */
     /* Hero Section - Optimized for Mobile */
     /* Hero Section - Optimized for Mobile */
+    /* Hero Section - Optimized for Mobile (Side-by-Side Scaled) */
     .hero-wrapper {
-        padding-top: 1.5rem;
-        /* Minimal top padding */
+        padding-top: 1rem;
         padding-bottom: 0;
         height: auto;
-        /* Allow auto but constrained by min-height */
-        min-height: 45vh;
-        /* Drastically reduced from 85vh */
-        max-height: 500px;
-        /* Cap visual height */
+        min-height: auto;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        /* Side-by-Side like Desktop */
+        align-items: flex-end;
+        /* Anchor image to bottom */
+        justify-content: center;
         overflow: hidden;
         position: relative;
-        /* Anchor for absolute children */
+    }
+
+    .hero-people-overlay {
+        position: relative !important;
+        width: 45% !important;
+        /* Share space */
+        max-width: none !important;
+        height: auto !important;
+        object-fit: contain;
+        margin: 0 !important;
+        bottom: 0 !important;
+        left: auto !important;
+        transform: none !important;
+        z-index: 1;
+        display: block !important;
     }
 
     .hero-overlay-text {
         position: relative !important;
-        transform: none !important;
+        width: 55% !important;
+        /* Share space */
+        text-align: left !important;
+        /* Match user request */
         top: auto !important;
         right: auto !important;
-        width: 100% !important;
-        text-align: center !important;
-        margin-bottom: 0;
-        padding: 0 1rem;
+        transform: none !important;
+        margin-bottom: 2rem;
+        /* Give some breathing room from bottom */
+        padding: 0 0.5rem 0 0;
+        /* Right padding only */
         z-index: 10;
-        flex-grow: 1;
-        /* Allow text to take available space */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .hero-overlay-text h2 {
-        font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
-        /* Slightly smaller for compact feel */
+        font-size: clamp(1rem, 4vw, 1.5rem) !important;
         line-height: 1.1;
         margin-bottom: 0.5rem;
     }
 
     /* Stats on mobile - compact */
     .hero-stats {
-        gap: 0.5rem;
+        gap: 0.25rem;
         margin-bottom: 0;
+        align-items: flex-start !important;
     }
 
     .stat-line {
-        font-size: 0.85rem;
-    }
-
-    .hero-people-overlay {
-        position: absolute !important;
-        /* Fixed at bottom like Desktop */
-        bottom: 0 !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: auto !important;
-        max-width: 95% !important;
-        height: auto !important;
-        max-height: 45%;
-        /* Ensure it doesn't crowd text in short view */
-        object-fit: contain;
-        object-position: bottom center;
-        z-index: 1;
-        display: block !important;
-        margin: 0 !important;
+        font-size: 0.65rem !important;
+        text-align: left;
     }
 
     /* CTA Section - Fixed "Tables out of square" */
