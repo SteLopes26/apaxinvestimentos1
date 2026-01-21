@@ -465,29 +465,18 @@ main {
     }
 
     .hero-people-overlay {
-        position: relative !important;
-        order: 2;
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        /* "Same proportion" logic: remove distinct max-height, let it flow naturally but not huge */
-        max-height: 55vh;
-        margin: 0 auto !important;
-        left: auto !important;
+        position: absolute !important;
         bottom: 0 !important;
-        z-index: 2;
+        left: 0 !important;
+        width: 100% !important;
+        max-height: 80vh;
         object-fit: contain;
         object-position: bottom center;
-        display: block;
-        vertical-align: bottom;
+        z-index: 2;
+        margin: 0 !important;
     }
 
-    /* Compact Steps Cards for Mobile */
-    .step-card {
-        padding: 1.5rem !important;
-        /* Reduce padding from desktop's 2.5rem */
-    }
+
 
     .steps-section {
         padding: 2rem 1rem 4rem !important;
