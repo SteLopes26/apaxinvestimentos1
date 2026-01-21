@@ -787,6 +787,7 @@ main {
     /* Control height */
     object-fit: contain;
     display: block;
+    /* Fix sub-pixel gaps */
     margin-bottom: -1px;
     /* Ensure no gap at bottom */
 }
