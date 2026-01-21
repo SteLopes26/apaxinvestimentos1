@@ -917,57 +917,166 @@ main {
 
 
 /* Mobile responsive adjustments */
-@media (max-width: 768px) {
+/* =========================================
+   Unified Mobile Responsiveness
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    /* Hero Section - Mobile Optimization */
     .hero-section {
-        padding: 2rem 1rem;
+        height: auto;
+        min-height: auto;
+        background-color: var(--primary);
+        padding-bottom: 0;
+        overflow: hidden;
     }
 
-    .hero-title {
+    .hero-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+        padding-top: 3rem;
+        padding-bottom: 25rem;
+        /* Space for the image at bottom */
+        min-height: auto;
+        gap: 1.5rem;
+        background: url('assets/hero-bg-v2.png') no-repeat center top / cover;
+    }
+
+    .hero-image {
+        display: none;
+        /* Hide default image tag, use background on wrapper or specific mobile image logic if preferred, but existing code used opacity overlay. Let's keep it simple. */
+    }
+
+    /* Text Overlay - Static Position for Mobile */
+    .hero-overlay-text {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        padding: 0 1.5rem;
+        background: transparent !important;
+        z-index: 2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-overlay-text h2 {
+        font-size: 2rem !important;
+        /* Larger for readability */
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-stats {
+        align-items: center !important;
+        justify-content: center;
+        flex-direction: column;
+        /* Stack stats on mobile */
+        gap: 0.8rem;
+    }
+
+    .stat-line {
+        font-size: 1.1rem !important;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+    }
+
+    /* Person Overlay - Anchored to Bottom */
+    .hero-people-overlay {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 90% !important;
+        max-width: 360px !important;
+        height: auto !important;
+        max-height: 50vh;
+        object-fit: contain;
+        object-position: bottom center;
+        z-index: 1;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    /* General Section Padding */
+    .section-container,
+    .cta-section-wrapper,
+    .differentials-section,
+    .steps-section,
+    .faq-section,
+    .site-footer {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    .page-header {
+        margin-bottom: 2rem;
+    }
+
+    .page-title {
         font-size: 2rem;
     }
 
-    .hero-badges {
-        flex-direction: column;
-        gap: 0.5rem;
+    /* Grid Adjustments */
+    .news-grid,
+    .articles-grid,
+    .steps-grid,
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        /* Stack items */
+        gap: 2rem;
     }
 
-    .cta-section {
-        padding: 2rem;
-    }
-
-    .benefits-col,
-    .form-col {
-        width: 100%;
-        margin-bottom: 1.5rem;
-    }
-
-    .social-buttons a {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .steps-grid {
+    /* CTA & Form */
+    .cta-wrapper {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 
-    .step-card {
-        padding: 1rem;
+    .form-grid {
+        grid-template-columns: 1fr;
+        /* Stack form inputs */
     }
 
-    .step-number {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+    .benefits-list {
+        display: block;
+        /* Stack benefits */
     }
 
-    .faq-section,
-    .steps-section,
-    .video-section,
-    .articles-section,
-    .map-section {
-        padding: 1rem;
-        margin: 1rem 1.5rem;
+    .benefits-list li {
+        margin-bottom: 0.8rem;
+    }
+
+    /* Footer */
+    .footer-logo {
+        height: 120px;
+        margin: 0 auto 1rem;
+        display: block;
+    }
+
+    .footer-col {
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-col-logo {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay-text h2 {
+        font-size: 1.7rem !important;
+    }
+
+    .hero-people-overlay {
+        max-width: 100% !important;
     }
 }
 
