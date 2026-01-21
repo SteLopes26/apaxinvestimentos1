@@ -747,106 +747,123 @@ main {
 }
 
 /* Hero Section */
-/* Hero Section */
-.hero-section {
-    position: relative;
+/* New Hero Section (Blue Redesign) */
+.new-hero {
+    background-color: var(--primary);
+    /* Solid Blue */
     padding: 0;
     margin-bottom: 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    background: transparent;
-    display: block;
+    overflow: hidden;
 }
 
-/* Hero Image */
-.hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
+.new-hero-container {
+    max-width: 1200px;
     margin: 0 auto;
-    object-fit: cover;
-    /* Standard display for max quality */
+    display: flex;
+    flex-direction: row;
+    /* Image Left, Text Right (Desktop) */
+    align-items: flex-end;
+    /* Anchor image to bottom */
+    justify-content: space-between;
+    padding: 2rem 2rem 0;
+    position: relative;
+    min-height: 500px;
 }
 
-/* Hero Overlay Hover Effect */
-.stat-line:hover {
-    transform: scale(1.05);
+/* Image - Left Side */
+.new-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
 }
 
-/* Mobile Responsiveness for Hero Overlay */
-/* Tablet and Mobile Hero Implementation */
-/* Tablet and Mobile Hero Implementation */
+.new-hero-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 550px;
+    /* Control height */
+    object-fit: contain;
+    display: block;
+    margin-bottom: -1px;
+    /* Ensure no gap at bottom */
+}
+
+/* Content - Right Side */
+.new-hero-content {
+    flex: 1;
+    color: var(--white);
+    padding: 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 4rem;
+    /* Lift text slightly */
+}
+
+.new-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.new-hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-item {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    /* Orange highlight */
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+}
+
+/* Mobile Responsiveness (New Hero) */
 @media (max-width: 1024px) {
-    .hero-section {
-        height: auto;
+    .new-hero-container {
+        flex-direction: row;
+        /* Replica of Desktop Side-by-Side */
+        align-items: flex-end;
+        padding: 1rem 1rem 0;
         min-height: auto;
-        /* Removed 100vh to reduce height */
-        background-color: var(--primary);
-        padding-bottom: 0;
     }
 
-    .hero-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 480px;
-        /* Reduced from 600px to ~half (considering content) */
-        position: relative;
-        padding-top: 2rem;
-        /* Reduced padding */
+    .new-hero-image {
+        width: 45%;
+        /* Image slightly smaller than text */
+        flex: none;
     }
 
-    .hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-        opacity: 0.3;
+    .new-hero-content {
+        width: 55%;
+        flex: none;
+        padding: 0 0 1.5rem 0.5rem;
+        margin-bottom: 0;
     }
 
-    .hero-overlay-text {
-        position: relative !important;
-        order: 1;
-        top: auto !important;
-        right: auto !important;
-        transform: none !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        text-align: center !important;
-        padding: 1.5rem;
-        background: transparent !important;
-        z-index: 2;
-    }
-
-    .hero-overlay-text h2 {
-        font-size: 1.8rem !important;
-        /* Slightly smaller to fit */
+    .new-hero-content h1 {
+        font-size: clamp(0.9rem, 4vw, 1.4rem);
         margin-bottom: 1rem;
     }
 
-    .hero-stats {
-        align-items: center !important;
-        gap: 1rem;
+    .stat-item {
+        font-size: 0.65rem;
+        padding-left: 0.5rem;
+        border-left-width: 3px;
     }
 
-    .hero-people-overlay {
-        position: relative !important;
-        order: 2;
-        display: block !important;
-        width: 100% !important;
-        max-width: 400px !important;
-        /* Limit width to keep height proportional */
-        height: auto !important;
+    .new-hero-image img {
         max-height: 300px;
-        /* Limit height explicitly */
-        margin: auto auto 0 auto !important;
-        left: auto !important;
-        bottom: 0 !important;
-        z-index: 2;
-        object-fit: contain;
-        object-position: bottom center;
     }
 }
 
@@ -1076,75 +1093,10 @@ main {
     /* Hero Section - Optimized for Mobile */
     /* Hero Section - Optimized for Mobile */
     /* Hero Section - Optimized for Mobile (Strict Desktop Scaling) */
-    .hero-wrapper {
-        padding-top: 1rem;
-        padding-bottom: 0;
-        height: auto;
-        min-height: auto;
-        display: flex;
-        flex-direction: row-reverse;
-        /* Text Left, Image Right */
-        align-items: flex-end;
-        /* Anchor image to bottom */
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .hero-people-overlay {
-        position: relative !important;
-        width: 60% !important;
-        /* Larger image as requested */
-        max-width: none !important;
-        height: auto !important;
-        object-fit: contain;
-        margin: 0 0 -10px 0 !important;
-        /* Slight negative margin */
-        bottom: 0 !important;
-        left: auto !important;
-        right: 0 !important;
-        transform: translateY(10px) !important;
-        /* Push DOWN visual pixels to cover gap */
-        z-index: 10;
-        display: block !important;
-    }
-
-    .hero-overlay-text {
-        position: relative !important;
-        width: 40% !important;
-        text-align: left !important;
-        top: auto !important;
-        right: auto !important;
-        transform: none !important;
-        margin-bottom: 0 !important;
-        /* REMOVE spacing that pushes container up */
-        padding: 0 0.5rem 2rem 1rem;
-        /* Add padding inside instead for spacing */
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .hero-overlay-text h2 {
-        /* Adjusted font for narrower column */
-        font-size: clamp(0.85rem, 4vw, 1.3rem) !important;
-        line-height: 1.1;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Stats on mobile - compact */
-    .hero-stats {
-        gap: 0.2rem;
-        margin-bottom: 0;
-        align-items: flex-start !important;
-    }
-
-    .stat-line {
-        font-size: 0.55rem !important;
-        /* Tiny to fit */
-        text-align: left;
-    }
+    /* Hero Section - Old Styles Removed */
+    /* .hero-wrapper styles for legacy hero deleted. New hero uses .new-hero structure defined above. */
+    /* Fixed corrupt CSS */
+    /* Hero Section styles removed */
 
     /* CTA Section - Fixed "Tables out of square" */
     .cta-wrapper {
