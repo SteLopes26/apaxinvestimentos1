@@ -1075,26 +1075,28 @@ main {
     /* Hero Section */
     /* Hero Section - Optimized for Mobile */
     /* Hero Section - Optimized for Mobile */
-    /* Hero Section - Optimized for Mobile (Side-by-Side Scaled) */
+    /* Hero Section - Optimized for Mobile (Strict Desktop Scaling) */
     .hero-wrapper {
         padding-top: 1rem;
         padding-bottom: 0;
         height: auto;
         min-height: auto;
+        /* Allow natural scaling */
         display: flex;
         flex-direction: row;
-        /* Side-by-Side like Desktop */
+        /* Strict Side-by-Side */
         align-items: flex-end;
         /* Anchor image to bottom */
         justify-content: center;
+        /* Center content horizontally */
         overflow: hidden;
         position: relative;
     }
 
     .hero-people-overlay {
         position: relative !important;
-        width: 45% !important;
-        /* Share space */
+        width: 48% !important;
+        /* Matches desktop proportions (Visual) */
         max-width: none !important;
         height: auto !important;
         object-fit: contain;
@@ -1108,17 +1110,15 @@ main {
 
     .hero-overlay-text {
         position: relative !important;
-        width: 55% !important;
-        /* Share space */
+        width: 52% !important;
+        /* Text on right */
         text-align: left !important;
-        /* Match user request */
         top: auto !important;
         right: auto !important;
         transform: none !important;
-        margin-bottom: 2rem;
-        /* Give some breathing room from bottom */
+        margin-bottom: 1.5rem;
+        /* Reduced margin for tighter fit */
         padding: 0 0.5rem 0 0;
-        /* Right padding only */
         z-index: 10;
         display: flex;
         flex-direction: column;
@@ -1126,20 +1126,22 @@ main {
     }
 
     .hero-overlay-text h2 {
-        font-size: clamp(1rem, 4vw, 1.5rem) !important;
+        /* Use smaller font size to scale down without breaking lines awkwardly */
+        font-size: clamp(0.85rem, 3.5vw, 1.4rem) !important;
         line-height: 1.1;
         margin-bottom: 0.5rem;
     }
 
     /* Stats on mobile - compact */
     .hero-stats {
-        gap: 0.25rem;
+        gap: 0.2rem;
         margin-bottom: 0;
         align-items: flex-start !important;
     }
 
     .stat-line {
-        font-size: 0.65rem !important;
+        font-size: 0.6rem !important;
+        /* Very small to fit single lines */
         text-align: left;
     }
 
