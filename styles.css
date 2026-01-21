@@ -1163,7 +1163,11 @@ main {
 
     .benefits-col,
     .form-col {
-        padding: 2rem !important;
+        padding: 1.5rem !important;
+        /* Reduced from 2rem to fit better */
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .form-grid {
