@@ -749,8 +749,8 @@ main {
 /* Hero Section */
 /* New Hero Section (Blue Redesign) */
 .new-hero {
-    background-color: var(--primary);
-    /* Solid Blue */
+    background-color: #001E35;
+    /* Matched to hero-family.png background */
     padding: 0;
     margin-bottom: 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
