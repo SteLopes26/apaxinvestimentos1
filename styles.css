@@ -750,152 +750,7 @@ main {
     }
 }
 
-/* Hero Section */
-/* New Hero Section (Blue Redesign) */
-.new-hero {
-    background-color: #001E35;
-    /* Matched to hero-family.png background */
-    padding: 0;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-}
 
-.new-hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    /* Image Left, Text Right (Desktop) */
-    align-items: flex-end;
-    /* Anchor image to bottom */
-    justify-content: space-between;
-    padding: 2rem 2rem 0;
-    position: relative;
-    min-height: 500px;
-}
-
-/* Image - Left Side */
-.new-hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    z-index: 1;
-}
-
-.new-hero-image img {
-    max-width: 100%;
-    height: auto;
-    max-height: 550px;
-    /* Control height */
-    object-fit: contain;
-    display: block;
-    /* Fix sub-pixel gaps */
-    margin-bottom: -1px;
-    /* Ensure no gap at bottom */
-}
-
-/* Content - Right Side */
-.new-hero-content {
-    flex: 1;
-    color: var(--white);
-    padding: 2rem;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 4rem;
-    max-width: 800px;
-    /* Widened for 2-3 line title balance */
-}
-
-.new-hero-content h1 {
-    font-size: clamp(2rem, 4.5vw, 2.8rem);
-    /* Slightly smaller to fit in 2-3 lines */
-    font-weight: 800;
-    line-height: 1.1;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.new-hero-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.stat-item {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent);
-    /* Orange highlight */
-    border-left: 4px solid var(--accent);
-    padding-left: 1rem;
-}
-
-/* Mobile Responsiveness (New Hero) - Adjusted to 768px to keep Desktop view on Tablets/Laptops */
-@media (max-width: 768px) {
-    .new-hero-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 1rem 0;
-        min-height: auto;
-    }
-
-    .new-hero-image {
-        width: 100%;
-        max-width: 400px;
-        flex: none;
-        order: 1;
-        /* Image on top? Or bottom? User wanted specific alignment, let's stick to standard vertical stack */
-        margin-bottom: 1rem;
-    }
-
-    .new-hero-content {
-        width: 100%;
-        flex: none;
-        padding: 0 1rem 2rem;
-        margin-bottom: 0;
-        text-align: center;
-        order: 2;
-    }
-
-    .new-hero-content h1 {
-        font-size: clamp(1.8rem, 5vw, 2.4rem);
-        /* Larger font for mobile stack */
-        margin-bottom: 1rem;
-    }
-
-    .stat-item {
-        font-size: 0.6rem;
-        padding-left: 0.4rem;
-        border-left-width: 2px;
-    }
-
-    .new-hero-image img {
-        max-height: 280px;
-        margin-bottom: -2px;
-        /* Pull down further to kill any blue line */
-        display: block;
-    }
-
-    /* Force Background and Text Color on Mobile */
-    .new-hero {
-        background-color: #001E35 !important;
-        height: auto !important;
-        min-height: auto !important;
-    }
-
-    .new-hero-content,
-    .new-hero-content h1,
-    .new-hero-content p {
-        color: white !important;
-    }
-}
-
-/* Ensures it covers if we ever set height, but auto height keeps aspect ratio */
 
 
 /* Steps Section */
@@ -1998,6 +1853,137 @@ main {
             grid-template-columns: 1fr;
             gap: 2rem;
         }
+    }
+}
+
+/* =========================================
+   NEW HERO SECTION (Relocated for Scope)
+   ========================================= */
+.new-hero {
+    background-color: #001E35;
+    padding: 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.new-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 2rem 2rem 0;
+    position: relative;
+    min-height: 500px;
+}
+
+.new-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.new-hero-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: -1px;
+}
+
+.new-hero-content {
+    flex: 1;
+    color: var(--white);
+    padding: 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
+
+.new-hero-content h1 {
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.new-hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-item {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+}
+
+/* Mobile Responsiveness (New Hero) - Adjusted to 768px */
+@media (max-width: 768px) {
+    .new-hero-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 1rem 0;
+        min-height: auto;
+    }
+
+    .new-hero-image {
+        width: 100%;
+        max-width: 400px;
+        flex: none;
+        order: 1;
+        margin-bottom: 1rem;
+    }
+
+    .new-hero-content {
+        width: 100%;
+        flex: none;
+        padding: 0 1rem 2rem;
+        margin-bottom: 0;
+        text-align: center;
+        order: 2;
+    }
+
+    .new-hero-content h1 {
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+        margin-bottom: 1rem;
+    }
+
+    .stat-item {
+        font-size: 0.6rem;
+        padding-left: 0.4rem;
+        border-left-width: 2px;
+    }
+
+    .new-hero-image img {
+        max-height: 280px;
+        margin-bottom: -2px;
+        display: block;
+    }
+
+    .new-hero {
+        background-color: #001E35 !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    .new-hero-content,
+    .new-hero-content h1,
+    .new-hero-content p {
+        color: white !important;
     }
 }
 
