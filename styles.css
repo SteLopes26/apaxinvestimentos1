@@ -1951,7 +1951,7 @@ main {
     .new-hero-content {
         width: 100%;
         flex: none;
-        padding: 0 1rem 2rem;
+        padding: 0 1rem 1rem;
         margin-bottom: 0;
         text-align: center;
         order: 1;
