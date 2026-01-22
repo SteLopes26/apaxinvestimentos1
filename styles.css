@@ -880,6 +880,19 @@ main {
         /* Pull down further to kill any blue line */
         display: block;
     }
+
+    /* Force Background and Text Color on Mobile */
+    .new-hero {
+        background-color: #001E35 !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    .new-hero-content,
+    .new-hero-content h1,
+    .new-hero-content p {
+        color: white !important;
+    }
 }
 
 /* Ensures it covers if we ever set height, but auto height keeps aspect ratio */
