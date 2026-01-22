@@ -835,33 +835,37 @@ main {
     padding-left: 1rem;
 }
 
-/* Mobile Responsiveness (New Hero) */
-@media (max-width: 1024px) {
+/* Mobile Responsiveness (New Hero) - Adjusted to 768px to keep Desktop view on Tablets/Laptops */
+@media (max-width: 768px) {
     .new-hero-container {
-        flex-direction: row;
-        /* Replica of Desktop Side-by-Side */
-        align-items: flex-end;
+        flex-direction: column;
+        align-items: center;
         padding: 1rem 1rem 0;
         min-height: auto;
     }
 
     .new-hero-image {
-        width: 45%;
-        /* Image slightly smaller than text */
+        width: 100%;
+        max-width: 400px;
         flex: none;
+        order: 1;
+        /* Image on top? Or bottom? User wanted specific alignment, let's stick to standard vertical stack */
+        margin-bottom: 1rem;
     }
 
     .new-hero-content {
-        width: 55%;
+        width: 100%;
         flex: none;
-        padding: 0 0 1.5rem 0.5rem;
+        padding: 0 1rem 2rem;
         margin-bottom: 0;
+        text-align: center;
+        order: 2;
     }
 
     .new-hero-content h1 {
-        font-size: clamp(0.7rem, 3.5vw, 1.25rem);
-        /* Smaller to avoid 4-line wrap */
-        margin-bottom: 0.8rem;
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+        /* Larger font for mobile stack */
+        margin-bottom: 1rem;
     }
 
     .stat-item {
@@ -1981,5 +1985,26 @@ main {
             grid-template-columns: 1fr;
             gap: 2rem;
         }
+    }
+}
+
+/* =========================================
+   CRITICAL VISIBILITY UTILITIES (Enforced)
+   ========================================= */
+.mobile-view-only {
+    display: none !important;
+}
+
+.desktop-view-only {
+    display: block !important;
+}
+
+@media (max-width: 768px) {
+    .mobile-view-only {
+        display: block !important;
+    }
+
+    .desktop-view-only {
+        display: none !important;
     }
 }
